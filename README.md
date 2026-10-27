@@ -7,7 +7,7 @@ A minimal Terraform configuration that creates one Azure resource group.
 | File | Purpose |
 | --- | --- |
 | `main.tf` | Terraform and azurerm provider setup, plus the resource group |
-| `variables.tf` | Inputs: subscription, name, region, tags |
+| `variables.tf` | Inputs: name, region, tags |
 | `outputs.tf` | Prints the resource group ID, name and region |
 
 ## Prerequisites
@@ -18,10 +18,10 @@ A minimal Terraform configuration that creates one Azure resource group.
 ## Usage
 
 ```bash
-# 1. Sign in and point Terraform at your subscription
+# 1. Sign in. Terraform uses the Azure CLI's active subscription.
 az login
-export ARM_SUBSCRIPTION_ID=$(az account show --query id -o tsv)
-# PowerShell: $env:ARM_SUBSCRIPTION_ID = (az account show --query id -o tsv)
+# Optional, if you have several subscriptions:
+# az account set --subscription "<name or id>"
 
 # 2. (Optional) edit the defaults in variables.tf: location, resource_group_name, tags
 

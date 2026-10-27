@@ -4,16 +4,14 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 4.0"
+      version = "~> 3.117"
     }
   }
 }
 
-# Uses your Azure CLI login (az login) by default.
-# azurerm v4 needs a subscription id: set ARM_SUBSCRIPTION_ID or fill in var.subscription_id.
+# Authenticates with your Azure CLI login (az login) and uses its active subscription.
 provider "azurerm" {
   features {}
-  subscription_id = var.subscription_id
 }
 
 resource "azurerm_resource_group" "main" {

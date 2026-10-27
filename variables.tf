@@ -1,9 +1,3 @@
-variable "subscription_id" {
-  description = "Azure subscription ID. Leave null to use the ARM_SUBSCRIPTION_ID environment variable."
-  type        = string
-  default     = null
-}
-
 variable "resource_group_name" {
   description = "Name of the Azure resource group."
   type        = string
