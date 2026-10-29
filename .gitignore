@@ -21,4 +21,4 @@ tfplan
 .terraformrc
 terraform.rc
 
-# Note: .terraform.lock.hcl is intentionally committed.
+# Note: .terraform.lock.hcl is not committed; your first terraform init creates it.
